@@ -59,7 +59,7 @@ jobs:
 #          mkdir DEVebuild
 #          cp -r build/* DEVebuild
 #          cd DEVebuild
-#          files=$(find . -maxdepth 1 ! -type d | grep 'index.*\.html' | grep -v '~dev\.html')
+#          files=$(find . -maxdepth 1 ! -type d | grep 'index.*.html' -o -name '~dev.html' \)
 #          rm -f $files
 #          tar cf ../DEVebuild.tar .
 #     - name: Upload DEVebuild.tar artifact
