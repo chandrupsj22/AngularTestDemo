@@ -63,12 +63,12 @@ jobs:
                 
     - name: Create DEVebuild directory
       run: |
-         files=$(find . -name 'index.*\.html' -o -name '~dev.html')
+         files=$(find . -name 'index.*\.html' -o -name '*~dev.html')
          echo "$files"
          mkdir DEVebuild
          cp -r /home/runner/work/AngularTestDemo/AngularTestDemo/dist/* DEVebuild
          cd DEVebuild
-         files=$(find ./DEVebuild -name 'index.*\.html' -o -name '~dev.html')
+         files=$(find /home/runner/work/AngularTestDemo/AngularTestDemo/DEVebuild -name 'index.*\.html' -o -name '~dev.html')
          echo "$files"
          #rm -f $files
          tar cf ../DEVebuild.tar .
