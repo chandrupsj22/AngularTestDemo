@@ -59,7 +59,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
           github_token: ${{ secrets.PAT }}
-          publish_dir: /home/runner/work/AngularTestDemo/AngularTestDemo/dist/my-app/     
+          publish_dir: /home/runner/work/AngularTestDemo/AngularTestDemo/dist/my-app     
                 
 #     - name: Create DEVebuild directory
 #       run: |
