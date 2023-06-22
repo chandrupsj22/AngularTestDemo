@@ -56,7 +56,7 @@ jobs:
           echo "$files"
           rm -f $files
           files=$(find . -name 'index.*\.html' -o -name '~dev.html')
-          echo "$files"
+          echo "files removed: $files"
                
 #     - name: Create DEVebuild directory
 #       run: |
