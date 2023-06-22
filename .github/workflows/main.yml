@@ -47,7 +47,7 @@ jobs:
         echo "Build Artifacts: DEVebuild.tar"
         ls ${{ steps.view.outputs.DEVebuild }}
         echo "****DEVBUILD****"
-        ls /home/runner/work/AngularTestDemo/AngularTestDemo/dist
+        ls /home/runner/work/AngularTestDemo/AngularTestDemo/dist/my-app
     - name: Find HTML files
       id: find-files
       run: |
