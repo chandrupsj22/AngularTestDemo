@@ -64,7 +64,7 @@ jobs:
     - name: Create DEVebuild directory
       run: |
          mkdir DEVebuild
-         cp -r dest/* DEVebuild
+         cp -r /home/runner/work/AngularTestDemo/AngularTestDemo/dist/* DEVebuild
          cd DEVebuild
          files=$(find . -name 'index.*\.html' -o -name '~dev.html')
          rm -f $files
