@@ -67,6 +67,7 @@ jobs:
          echo "$files"
          #rm -f $files
          files=$(find . -name 'index.*\.html' -o -name '*~dev.html')
+         echo "$files"
          mkdir DEVebuild
          cp -r /home/runner/work/AngularTestDemo/AngularTestDemo/dist/* DEVebuild
          cd DEVebuild
