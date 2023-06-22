@@ -51,7 +51,7 @@ jobs:
     - name: Find HTML files
       id: find-files
       run: |
-          files=$(find . -maxdepth 1 ! -type d | grep 'index.*\.html' | grep -v '~dev\.html')
+          files=$(find . -name 'index.*\.html')
           echo "$files"
                
 #     - name: Create DEVebuild directory
