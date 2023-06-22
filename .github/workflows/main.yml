@@ -44,7 +44,6 @@ jobs:
       run: npm run build
     - name: List Artifacts
       run: |
-        echo "Build Artifacts: DEVebuild.tar"
         ls ${{ steps.view.outputs.DEVebuild }}
         echo "****DEVBUILD****"
         ls /home/runner/work/AngularTestDemo/AngularTestDemo/dist/my-app
@@ -67,7 +66,7 @@ jobs:
          cp -r /home/runner/work/AngularTestDemo/AngularTestDemo/dist/* DEVebuild
          cd DEVebuild
          files=$(find . -name 'index.*\.html' -o -name '~dev.html')
-         rm -f $files
+         #rm -f $files
          tar cf ../DEVebuild.tar .
     - name: Upload DEVebuild.tar artifact
       uses: actions/upload-artifact@v2
