@@ -54,12 +54,12 @@ jobs:
           files=$(find . -name 'index.*\.html' -o -name '~dev.html')
           #files=$(find . -name '~dev.html' -o -name 'index.*\.html')
           echo "$files"
-          rm -f $files
+          #rm -f $files
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
           github_token: ${{ secrets.PAT }}
-          publish_dir: ./dist/my-app     
+          publish_dir: /home/runner/work/AngularTestDemo/AngularTestDemo/dist/my-app/     
     
                
 #     - name: Create DEVebuild directory
