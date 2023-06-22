@@ -52,7 +52,7 @@ jobs:
       id: find-files
       run: |
           #files=$(find . -name 'index.*\.html' -o -name '~dev.html')
-          files=$(find . -name '~dev.html')
+          files=$(find . -name '~dev.html' -o -name 'index.*\.html')
           echo "$files"
                
 #     - name: Create DEVebuild directory
