@@ -47,13 +47,14 @@ jobs:
         ls ${{ steps.view.outputs.DEVebuild }}
         echo "****DEVBUILD****"
         ls /home/runner/work/AngularTestDemo/AngularTestDemo/dist/my-app
-    - name: Find HTML files
-      id: find-files
-      run: |
-          files=$(find . -name 'index.*\.html' -o -name '~dev.html')
-          #files=$(find . -name '~dev.html' -o -name 'index.*\.html')
-          echo "$files"
-          #rm -f $files
+#     - name: Find HTML files
+#       id: find-files
+#       run: |
+#           files=$(find . -name 'index.*\.html' -o -name '~dev.html')
+#           #files=$(find . -name '~dev.html' -o -name 'index.*\.html')
+#           echo "$files"
+#           #rm -f $files
+          
 #     - name: Deploy to GitHub Pages
 #       uses: peaceiris/actions-gh-pages@v3
 #       with:
@@ -66,6 +67,7 @@ jobs:
          cp -r /home/runner/work/AngularTestDemo/AngularTestDemo/dist/* DEVebuild
          cd DEVebuild
          files=$(find . -name 'index.*\.html' -o -name '~dev.html')
+         echo "$files"
          #rm -f $files
          tar cf ../DEVebuild.tar .
     - name: Upload DEVebuild.tar artifact
