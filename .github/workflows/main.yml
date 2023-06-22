@@ -55,8 +55,12 @@ jobs:
           #files=$(find . -name '~dev.html' -o -name 'index.*\.html')
           echo "$files"
           rm -f $files
-          files=$(find . -name 'index.*\.html' -o -name '~dev.html')
-          echo "files removed: $files"
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+          github_token: ${{ secrets.PAT }}
+          publish_dir: ./dist/my-app     
+    
                
 #     - name: Create DEVebuild directory
 #       run: |
