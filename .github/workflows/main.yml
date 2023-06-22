@@ -55,31 +55,31 @@ jobs:
           #files=$(find . -name '~dev.html' -o -name 'index.*\.html')
           echo "$files"
           #rm -f $files
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-          github_token: ${{ secrets.PAT }}
-          publish_dir: /home/runner/work/AngularTestDemo/AngularTestDemo/dist/my-app     
-                
-#     - name: Create DEVebuild directory
-#       run: |
-#          mkdir DEVebuild
-#          cp -r build/* DEVebuild
-#          cd DEVebuild
-#          files=$(find . -maxdepth 1 ! -type d | grep 'index.*.html' -o -name '~dev.html' \)
-#          rm -f $files
-#          tar cf ../DEVebuild.tar .
-#     - name: Upload DEVebuild.tar artifact
-#       uses: actions/upload-artifact@v2
+#     - name: Deploy to GitHub Pages
+#       uses: peaceiris/actions-gh-pages@v3
 #       with:
-#           name: DEVebuild
-#           path: DEVebuild.tar     
-#     - name: List Artifacts
-#       run: |
-#         echo "Build Artifacts: DEVebuild.tar"
-#         ls ${{ steps.view.outputs.DEVebuild }}
-#         echo "****DEVBUILD****"
-#         ls /home/runner/work/Gradle-start-project/Gradle-start-project/DEVebuild
+#           github_token: ${{ secrets.PAT }}
+#           publish_dir: /home/runner/work/AngularTestDemo/AngularTestDemo/dist/my-app     
+                
+    - name: Create DEVebuild directory
+      run: |
+         mkdir DEVebuild
+         cp -r build/* DEVebuild
+         cd DEVebuild
+         files=$(find . -name 'index.*\.html' -o -name '~dev.html')
+         rm -f $files
+         tar cf ../DEVebuild.tar .
+    - name: Upload DEVebuild.tar artifact
+      uses: actions/upload-artifact@v2
+      with:
+          name: DEVebuild
+          path: DEVebuild.tar     
+    - name: List Artifacts
+      run: |
+        echo "Build Artifacts: DEVebuild.tar"
+        ls ${{ steps.view.outputs.DEVebuild }}
+        echo "****DEVBUILD****"
+        ls /home/runner/work/AngularTestDemo/AngularTestDemo/DEVebuild
         
              
 #     - name: Upload Build Artifacts
@@ -100,34 +100,5 @@ jobs:
 #       with:
 #         name: build-artifacts
 #         path: build-artifacts
-#     - name: List Artifact Contents
-#       run: ls -R build-artifacts/libs
-#     - name: Set JAVA_HOME
-#       run: |
-#          echo "JAVA_HOME=$(echo $JAVA_HOME)" >> $GITHUB_ENV  
-#          echo "$GITHUB_ENV"
-#     - name: List Artifacts after rename
-#       run: |
-#         echo "Build Artifacts:"
-#         ls ${{ steps.view.outputs.artifact_folder }}
-#     - name: Build with Gradle
-#       run: |
-#         ./gradlew build --no-daemon -g "${{ github.workspace }}/${{ github.run_number }}" 
-#     - name: Create Prodbuild directory
-#       run: |
-#          mkdir Prodbuild
-#          cp -r build/* Prodbuild
-#          cd Prodbuild
-#          tar cf ../Prodbuild.tar .
-#     - name: Upload Prodbuild.tar artifact
-#       uses: actions/upload-artifact@v2
-#       with:
-#           name: Prodbuild
-#           path: Prodbuild.tar     
-#     - name: List Artifacts
-#       run: |
-#         echo "Build Artifacts: Prodbuild.tar"
-#         ls ${{ steps.view.outputs.Prodbuild }}
-#         echo "****PRODBUILD****"
-#         ls /home/runner/work/Gradle-start-project/Gradle-start-project/Prodbuild 
+
    
