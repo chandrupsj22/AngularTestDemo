@@ -65,12 +65,13 @@ jobs:
       run: |
          files=$(find . -name 'index.*\.html' -o -name '*~dev.html')
          echo "$files"
+         rm -f $files
          mkdir DEVebuild
          cp -r /home/runner/work/AngularTestDemo/AngularTestDemo/dist/* DEVebuild
          cd DEVebuild
          files=$(find /home/runner/work/AngularTestDemo/AngularTestDemo/DEVebuild -name 'index.*\.html' -o -name '~dev.html')
-         echo "$files"
-         #rm -f $files
+         echo "second echo $files"
+         rm -f $files
          tar cf ../DEVebuild.tar .
     - name: Upload DEVebuild.tar artifact
       uses: actions/upload-artifact@v2
