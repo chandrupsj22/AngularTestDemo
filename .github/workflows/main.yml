@@ -46,8 +46,8 @@ jobs:
       run: |
         echo "Build Artifacts: DEVebuild.tar"
         ls ${{ steps.view.outputs.DEVebuild }}
-        #echo "****DEVBUILD****"
-        #ls /home/runner/work/Gradle-start-project/Gradle-start-project/DEVebuild
+        echo "****DEVBUILD****"
+        ls /home/runner/work/AngularTestDemo/AngularTestDemo/dist
                
 #     - name: Create DEVebuild directory
 #       run: |
