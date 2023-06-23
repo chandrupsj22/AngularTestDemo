@@ -24,7 +24,12 @@ jobs:
       run: |
           git config --global user.name "chandrupsj22"
           git config --global user.email "133023965+chandru-kloudping@users.noreply.github.com"
-        
+    - name: Replace tokens
+      run: |
+          sed -i "s/#{username}#/${{ secrets.USERNAME }}/g" ./file.txt
+          sed -i "s/#{password}#/${{ secrets.PASSWORD }}/g" ./file.txt   
+          echo "Username: ${{ secrets.USERNAME }}"
+          echo "Password: ${{ secrets.PASSWORD }}"
     - name: Fetch version from package.json
       run: |
           version=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
