@@ -32,7 +32,7 @@ jobs:
         tokenSuffix: '}#'
     - name: display file.txt
       run: |
-        cat file.txt        
+        cat /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt        
     - name: Fetch version from package.json
       run: |
           version=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
