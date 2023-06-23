@@ -24,12 +24,22 @@ jobs:
       run: |
           git config --global user.name "chandrupsj22"
           git config --global user.email "133023965+chandru-kloudping@users.noreply.github.com"
-    - name: Replace tokens
-      uses: cschleiden/replace-tokens@v1
+#     - name: Replace tokens
+#       uses: cschleiden/replace-tokens@v1
+#       with:
+#         files: /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt
+#         tokenPrefix: '#{'
+#         tokenSuffix: '}#'
+        
+    - uses: cschleiden/replace-tokens@v1
       with:
-        files: /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt
-        tokenPrefix: '#{'
-        tokenSuffix: '}#'
+         tokenPrefix: '#{'
+         tokenSuffix: '}#'
+         files: '["**/*.txt"]'
+      env:
+         username: ${{ secrets.USERNAME }}
+         password: ${{ secrets.PASSWORD }}  
+        
     - name: display file.txt
       run: |
         cat /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt        
