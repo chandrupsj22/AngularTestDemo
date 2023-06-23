@@ -34,8 +34,8 @@ jobs:
     - uses: cschleiden/replace-tokens@v1
       with:
          files: '["**/*.txt"]'
-         echo "USERNAME Value: $USERNAME"
-         echo "PASSWORD Value: $PASSWORD"
+         echo "USERNAME Value: ${USERNAME}"
+         echo "PASSWORD Value: ${PASSWORD}"
       env:
          USERNAME: https://somecdn.com/...
          PASSWORD: some_value
