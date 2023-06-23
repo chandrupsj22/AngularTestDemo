@@ -28,10 +28,9 @@ jobs:
       uses: cschleiden/replace-tokens@v1
       with:
         files: /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-         cat /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt
-           
+        tokenPrefix: '#{'
+        tokenSuffix: '}#'
+             
     - name: Fetch version from package.json
       run: |
           version=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
