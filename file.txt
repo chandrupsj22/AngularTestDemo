@@ -1,2 +1,2 @@
-username: #{abcd}#
-password: #{abcdpass}#
+username: #{username}#
+password: #{password}#
