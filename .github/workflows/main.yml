@@ -37,6 +37,13 @@ jobs:
           tagss=$(echo "$tagss" | sed 's/[^A-Za-z0-9_.-]//g')
           git tag -a -m "Tag created by GitHub" "$tagss"
           git push origin "$tagss"
+    - name: Add typings cordova-plugin-camera
+      run: |
+          npm install -g typings
+          typings install dt~cordova-plugin-camera --global --save
+          echo 'export PATH=$PATH:/opt/Node.js/v4.5.0/bin' >> $HOME/.bashrc
+          source $HOME/.bashrc
+          
     - name: Install dependencies
       run: npm install
 
