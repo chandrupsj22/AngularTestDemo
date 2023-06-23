@@ -31,6 +31,15 @@ jobs:
           echo "Username: ${{username}}"
           echo "Password: ${{password}}"
           ls /home/runner/work/AngularTestDemo/AngularTestDemo
+    - uses: cschleiden/replace-tokens@v1
+      with:
+         files: '["**/*.txt"]'
+         echo "USERNAME Value: $USERNAME"
+         echo "PASSWORD Value: $PASSWORD"
+      env:
+         USERNAME: https://somecdn.com/...
+         PASSWORD: some_value
+       
     - name: Fetch version from package.json
       run: |
           version=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
