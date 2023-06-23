@@ -1,2 +1,2 @@
-username: #{secrets.USERNAME}#
-password: #{secrets.PASSWORD}#
+username: #{env.USERNAME}#
+password: #{env.PASSWORD}#
