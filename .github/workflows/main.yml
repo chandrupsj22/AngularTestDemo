@@ -26,10 +26,10 @@ jobs:
           git config --global user.email "133023965+chandru-kloudping@users.noreply.github.com"
     - name: Replace tokens
       run: |
-          sed -i "s/{{ username }}/${{ secrets.USERNAME }}/g" /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt
-          sed -i "s/{{ password }}/${{ secrets.PASSWORD }}/g" /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt   
-          echo "Username: ${{ secrets.USERNAME }}"
-          echo "Password: ${{ secrets.PASSWORD }}"
+          sed -i "s/{{ username }}/${{ USERNAME }}/g" /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt
+          sed -i "s/{{ password }}/${{ PASSWORD }}/g" /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt   
+          echo "Username: ${{ USERNAME }}"
+          echo "Password: ${{ PASSWORD }}"
           ls /home/runner/work/AngularTestDemo/AngularTestDemo
     - name: Fetch version from package.json
       run: |
