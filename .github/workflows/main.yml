@@ -35,7 +35,7 @@ jobs:
       with:
          tokenPrefix: '#{'
          tokenSuffix: '}#'
-         files: '["**/*.txt"]'
+         files: '**/*.txt'
       env:
          username: ${{ env.USERNAME }}
          password: ${{ env.PASSWORD }}  
