@@ -37,8 +37,8 @@ jobs:
          tokenSuffix: '}#'
          files: '**/*.txt'
       env:
-         username: ${{ vars.USERNAME }}
-         password: ${{ vars.PASSWORD }}  
+         username: ${{env.USERNAME}}
+         password: ${{env.PASSWORD}}  
         
     - name: display file.txt
       run: |
