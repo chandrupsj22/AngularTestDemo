@@ -37,15 +37,13 @@ jobs:
          tokenSuffix: '}#'
          files: '**/*.txt'
       env:
-         username: ${{ vars.USERNAME }}
-         password: ${{ vars.PASSWORD }}  
+         username: ${{ secrets.USERNAME }}
+         password: ${{ secrets.PASSWORD }}  
         
     - name: display file.txt
       run: |
         cat /home/runner/work/AngularTestDemo/AngularTestDemo/file.txt
-        echo "repository variable : $USERNAME"
-      env:
-         username: ${{ vars.USERNAME }}
+        
          
     - name: Fetch version from package.json
       run: |
