@@ -36,9 +36,9 @@ jobs:
       run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add $GITHUB_WORKSPACE/.m2/settings.xml
-          git commit -m "Add settings.xml"
-          git push
+          #git add $GITHUB_WORKSPACE/.m2/settings.xml
+          #git commit -m "Add settings.xml"
+          #git push
           cat $GITHUB_WORKSPACE/.m2/settings.xml
     - uses: cschleiden/replace-tokens@v1
       with:
