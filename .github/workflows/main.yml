@@ -24,13 +24,15 @@ jobs:
       run: |
           git config --global user.name "chandrupsj22"
           git config --global user.email "133023965+chandru-kloudping@users.noreply.github.com"
-#     - name: Create settings.xml
-#       run: |
-#           mkdir -p $GITHUB_WORKSPACE/.m2
-#           echo '<settings><servers><server><id>github</id><username>{{USERNAME_GITHUB}}</username><password>{{GITHUB_PAT}}</password></server></servers></settings>' > $GITHUB_WORKSPACE/.m2/settings.xml
-#       env:
-#           GITHUB_USERNAME: ${{ secrets.USERNAME_GITHUB }}
-#           GITHUB_PAT: ${{ secrets.PAT }}
+    - name: Create settings.xml
+      run: |
+          sed -i "s/{{USERNAME}}/${{ secrets.USERNAME_GITHUB }}/g" ${{ github.workspace }}/.m2/settings.xml
+          sed -i "s/{{PAT}}/${{ secrets.PAT }}/g" ${{ github.workspace }}/.m2/settings.xml
+          echo " Content in xml"
+          cat ${{ github.workspace }}/.m2/settings.xml
+      env:
+           GITHUB_USERNAME: ${{ secrets.USERNAME_GITHUB }}
+           GITHUB_PAT: ${{ secrets.PAT }}
 
     - name: Commit and push settings.xml
       run: |
