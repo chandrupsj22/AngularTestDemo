@@ -27,7 +27,7 @@ jobs:
     - name: Create settings.xml
       run: |
           mkdir -p $GITHUB_WORKSPACE/.m2
-          echo '<settings><servers><server><id>github</id><username>USERNAME_GITHUB</username><password>GITHUB_PAT</password></server></servers></settings>' > $GITHUB_WORKSPACE/.m2/settings.xml
+          echo '<settings><servers><server><id>github</id><username>{{USERNAME_GITHUB}}</username><password>{{GITHUB_PAT}}</password></server></servers></settings>' > $GITHUB_WORKSPACE/.m2/settings.xml
       env:
           GITHUB_USERNAME: ${{ secrets.USERNAME_GITHUB }}
           GITHUB_PAT: ${{ secrets.PAT }}
