@@ -39,7 +39,7 @@ jobs:
           git add $GITHUB_WORKSPACE/.m2/settings.xml
           git commit -m "Add settings.xml"
           git push
-        
+          cat $GITHUB_WORKSPACE/.m2/settings.xml
     - uses: cschleiden/replace-tokens@v1
       with:
          tokenPrefix: '#{'
